@@ -7,3 +7,20 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "Cleaning the database..."
+Restaurant.destroy_all
+
+puts 'Creating restaurants...'
+restaurant_name = ['Bela Italia', 'Cordon Bleu', 'Papa Açorda', 'El Buli', "El Dorado"]
+categories = %w(chinese italian japanese french belgian)
+addresses = %w(Amsterdam Lisbon Rotterdam DenHaag Haarlem)
+
+restaurant_name.each do |restaurant|
+  Restaurant.create!(
+    name: restaurant,
+    address: addresses.sample,
+    phone_number: '000 0000 0000',
+    category: categories.sample
+  )
+end
