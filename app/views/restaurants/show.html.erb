@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <h1 class='mb-3'><%= @restaurant.name %>  <small><%= @restaurant.category.capitalize %> restaurant.</small></h1>
+
+  <p>Address:  <strong><%= @restaurant.address %></strong></p>
+  <p>Telephone number:  <strong><%= @restaurant.phone_number %></strong></p>
+
+  <h4 class='mt-5'><%= @restaurant.name %> reviews:</h4>
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li><%= review.content %></li>
+    <% end %>
+  </ul>
+</div>
